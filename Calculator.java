@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.lang.Math;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 class Main {
   public static void main(String[] args) {
@@ -113,6 +115,7 @@ class Main {
 			  num2 = input.nextDouble();
 
 			  result = (num1 * 100/num2);
+			  result = BigDecimal.valueOf(result).setScale(2, RoundingMode.HALF_UP).doubleValue();
 			  System.out.println( num1 + " è il " + result + "% di " + num2);
 			  
 			  break;
